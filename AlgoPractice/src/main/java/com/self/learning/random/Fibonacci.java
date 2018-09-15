@@ -1,5 +1,6 @@
 package com.self.learning.random;
 
+import static java.lang.System.*;
 import static java.lang.System.out;
 
 import java.util.Scanner;
@@ -13,9 +14,10 @@ public class Fibonacci {
         long[] cache = new long[n + 1];
         cache[0] = 0;
         cache[1] = 1;
-        //for (int i = 0; i < n; i++) {
-            fib(n, cache);
-        //}
+        fib(n, cache);
+        for (final long l : cache) {
+            out.print(l + ",");
+        }
     }
 
 

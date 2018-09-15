@@ -36,18 +36,21 @@ public class PermMissingElem {
         PermMissingElem permMissingElem = new PermMissingElem();
         int[] targetArray = new int[99999];
         for (int i = 0; i <= 99998; i++) {
-            if (i != 12344) {
-                targetArray[i] = i+1;
+            if (i == 12344) {
+                //do nothing
+            }  else {
+                targetArray[i] = i + 1;
             }
         }
-        targetArray[12344] = 100000;
+        //targetArray[12343] = 100000;
+        targetArray[12344] = 100001;
         System.out.println(permMissingElem.solution(targetArray));
     }
 
 
     public int solution(int[] A) {
         // write your code in Java SE 8
-        Long missingElement = ((long)(A.length+1) * (A.length + 2) / 2);
+        Long missingElement = ((long) (A.length + 1) * (A.length + 2) / 2);
         for (final int aA : A) {
             missingElement -= aA;
         }
